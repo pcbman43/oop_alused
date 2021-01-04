@@ -8,17 +8,17 @@ import java.util.Scanner;
 public class test {
     public static void main(String[] args) {
         Scanner sisend = new Scanner(System.in);
-        System.out.println("Sisestage punktisumma: ");
-        double ps = sisend.nextDouble();
-
-        if (ps >= 0 && ps < 66) {
-            System.out.println("Vähem kui kandideerimiseks vajalik.");
-        } else if (ps >= 66 && ps < 85) {
-            System.out.println("Kandideerimiseks vastuvõtule.");
-        } else if (ps >= 85 && ps <= 100) {
-            System.out.println("Vastuvõtt tagatud.");
-        } else if (ps < 0 || ps > 100) {
-            System.out.println("Vigane punktisumma.");
+        System.out.println("Sisestage oma nimi: ");
+        String nimi = sisend.next();
+        System.out.println("Sisestage lubatud kiirus: ");
+        int lubatud = sisend.nextInt();
+        System.out.println("Sisestage tegelik kiirus: ");
+        int tegelik = sisend.nextInt();
+        int trahv = (tegelik - lubatud) * 3;
+        if (trahv >= 190) {
+            trahv = 190;
         }
+        System.out.println(nimi + ", kiiruse ületamise eest on teie trahv " + trahv + " eurot.");
+
     }
 }
