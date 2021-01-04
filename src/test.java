@@ -3,18 +3,22 @@ import java.util.Scanner;
 /*
  * Muutujate kasutamise näide
  * autor - Mihkel Kougia
- * ülesanne 2.1
+ * ülesanne 2.2
  */
 public class test {
     public static void main(String[] args) {
         Scanner sisend = new Scanner(System.in);
-        System.out.println("Sisestage pilede aluse kõrgus (km): ");
-        double pilved = sisend.nextDouble();
+        System.out.println("Sisestage punktisumma: ");
+        double ps = sisend.nextDouble();
 
-        if (pilved > 6.0) {
-            System.out.println("Need on ülemised pilved.");
-        } else {
-            System.out.println("Need ei ole ülemised pilved.");
+        if (ps >= 0 && ps < 66) {
+            System.out.println("Vähem kui kandideerimiseks vajalik.");
+        } else if (ps >= 66 && ps < 85) {
+            System.out.println("Kandideerimiseks vastuvõtule.");
+        } else if (ps >= 85 && ps <= 100) {
+            System.out.println("Vastuvõtt tagatud.");
+        } else if (ps < 0 || ps > 100) {
+            System.out.println("Vigane punktisumma.");
         }
     }
 }
