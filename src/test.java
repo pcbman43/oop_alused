@@ -1,9 +1,10 @@
 public class test {
     public static void main(String[] args) {
-        System.out.println("Täna õppisime:");
-        System.out.println("1. JDK installeerimine ja seadistamine");
-        System.out.println("2. IDE installeerimine ja seadistamine");
-        System.out.println("3. IDE kasutamine");
-        System.out.println("4. git VCS kasutamine");
+        System.out.println("Tere, Maailm!");
+        int aasta = 2020;
+        String liblikas = "teelehe-mosaaikliblikas";
+        String lauseKeskosa = ". aasta liblikas on ";
+        String lause = aasta + lauseKeskosa + liblikas;
+        System.out.println(lause);
     }
 }
