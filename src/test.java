@@ -8,15 +8,16 @@ import java.util.Scanner;
 public class test {
     public static void main(String[] args) {
         Scanner sisend = new Scanner(System.in);
-        System.out.print("Täringute arv: ");
+        System.out.print("Mitu pöialpoissi tahab õunu? ");
         int mitu = sisend.nextInt();
-
-        while (true) {
-            int taring = (int) Math.round(Math.random() * 6);
-            System.out.println(taring);
-            if (taring == mitu) {
-                break;
-            }
+        int lumevalgekeseOunad = 14;
+        int poialpoiss = 1;
+        while (poialpoiss <= mitu) {
+            int ounad = (int) (Math.random() * 3);
+            System.out.println(ounad);
+            lumevalgekeseOunad -= ounad;
+            poialpoiss++;
         }
+        System.out.println("Lumevalgekesele jäi " + lumevalgekeseOunad);
     }
 }

@@ -1,13 +1,15 @@
-/*
- * ülesanne 1.2
- */
+import java.util.Scanner;
 
+/*
+ * while tsükkel
+ * autor - Mihkel Kougia
+ * ülesanne 3.3
+ */
 public class java12 {
     public static void main(String[] args) {
-        int aasta = 2020;
-        String liblikas = "teelehe-mosaaikliblikas";
-        String lauseKeskosa = ". aasta liblikas on ";
-        String lause = aasta + lauseKeskosa + liblikas;
-        System.out.println(lause);
+        Scanner sisend = new Scanner(System.in);
+        System.out.print("Täringute arv: ");
+        int mitu = sisend.nextInt();
+
     }
 }
