@@ -3,24 +3,20 @@ import java.util.Scanner;
 /*
  * while tsükkel
  * autor - Mihkel Kougia
- * ülesanne 3.1
+ * ülesanne 3.3
  */
 public class test {
     public static void main(String[] args) {
         Scanner sisend = new Scanner(System.in);
-        System.out.print("Sisestage ringide arv: ");
-        int ringideArv = sisend.nextInt();
+        System.out.print("Täringute arv: ");
+        int mitu = sisend.nextInt();
 
-        int porgand = 0;
-        int ring = 1;
-        while (ring <= ringideArv) {
-            if (ring % 2 == 0) {
-                porgand += ring;
+        while (true) {
+            int taring = (int) Math.round(Math.random() * 6);
+            System.out.println(taring);
+            if (taring == mitu) {
+                break;
             }
-            ring++;
         }
-        System.out.println("Porgandite koguarv on " + porgand);
-
-
     }
 }
