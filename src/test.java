@@ -8,13 +8,18 @@ import java.util.Scanner;
 public class test {
     public static void main(String[] args) {
         Scanner sisend = new Scanner(System.in);
-        System.out.print("Sisestage mitu korda tuleb äratada: ");
-        int mitu = sisend.nextInt();
-        int kord = 1;
-        while (kord <= mitu) {
-            System.out.println("Tõuse ja sära!");
-            kord++;
+        System.out.print("Sisestage ringide arv: ");
+        int ringideArv = sisend.nextInt();
+
+        int porgand = 0;
+        int ring = 1;
+        while (ring <= ringideArv) {
+            if (ring % 2 == 0) {
+                porgand += ring;
+            }
+            ring++;
         }
+        System.out.println("Porgandite koguarv on " + porgand);
 
 
     }
