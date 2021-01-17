@@ -3,20 +3,22 @@ import java.util.Scanner;
 /*
  * meetod + return operaator
  * autor - Mihkel Kougia
- * ülesanne 6.2
+ * ülesanne 6.3
  * */
 public class test {
-    static int mahlapakkideArv(double ounteKogus) {
-        int pakkideArv = (int) Math.round(ounteKogus * 0.4 / 3);
-        return pakkideArv;
+    static int eelarve(int mitu) {
+        int makse = mitu * 10 + 55;
+        return makse;
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Sisestage õunte kogus kilogrammides: ");
-        double mitu = input.nextDouble();
+        System.out.println("Mitu inimest on kutsutud?");
+        int kutsutud = input.nextInt();
+        System.out.println("Mitu inimest tuleb?");
+        int tulevad = input.nextInt();
 
-        System.out.println(mahlapakkideArv(mitu));
-
+        System.out.println("Maksimaalne eelarve: " + eelarve(kutsutud) + " eurot.");
+        System.out.println("Minimaalne eelarve: " + eelarve(tulevad) + " eurot.");
     }
 }
