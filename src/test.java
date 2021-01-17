@@ -3,22 +3,25 @@ import java.util.Scanner;
 /*
  * meetod + return operaator
  * autor - Mihkel Kougia
- * ülesanne 6.3
+ * ülesanne 6.4
  * */
 public class test {
-    static int eelarve(int mitu) {
-        int makse = mitu * 10 + 55;
-        return makse;
+    public static void tervitus(int n) {
+        System.out.println("\"Tere!\"");
+        System.out.println("Täna " + n + ". kord tervitada mõtiskleb võõrustaja.");
+        System.out.println("\"Külaline: Tere, suur tänu kutse eest!\"");
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Mitu inimest on kutsutud?");
-        int kutsutud = input.nextInt();
-        System.out.println("Mitu inimest tuleb?");
-        int tulevad = input.nextInt();
+        System.out.print("Sisestage külaliste arv: ");
+        int mitu = input.nextInt();
 
-        System.out.println("Maksimaalne eelarve: " + eelarve(kutsutud) + " eurot.");
-        System.out.println("Minimaalne eelarve: " + eelarve(tulevad) + " eurot.");
+        int number = 1;
+
+        while (number <= mitu) {
+            tervitus(number);
+            number++;
+        }
     }
 }
