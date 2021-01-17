@@ -1,27 +1,23 @@
 import java.util.Scanner;
 
 /*
- * meetod + return operaator
+ * while tsükkel
  * autor - Mihkel Kougia
- * ülesanne 6.1
- * */
+ * ülesanne 3.3
+ */
 public class test {
-    static String banner(String lause) {
-        String suur = lause.toUpperCase();
-        return suur;
-    }
-
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Mitu korda kuvada soovite reklaamilauset kuvada? ");
-        int mitu = input.nextInt();
-        System.out.println("Sisestage reklaamlause: ");
-        input = new Scanner(System.in);
-        String mis = input.nextLine();
-        int kord = 1;
-        while (kord <= mitu) {
-            System.out.println(banner(mis));
-            kord++;
+        Scanner sisend = new Scanner(System.in);
+        System.out.print("Mitu pöialpoissi tahab õunu? ");
+        int mitu = sisend.nextInt();
+        int lumevalgekeseOunad = 14;
+        int poialpoiss = 1;
+        while (poialpoiss <= mitu) {
+            int ounad = (int) (Math.random() * 3);
+            System.out.println(ounad);
+            lumevalgekeseOunad -= ounad;
+            poialpoiss++;
         }
+        System.out.println("Lumevalgekesele jäi " + lumevalgekeseOunad);
     }
 }
