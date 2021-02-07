@@ -1,27 +1,39 @@
+import java.io.File;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
  * meetod + return operaator
  * autor - Mihkel Kougia
- * ülesanne 6.4
+ * ülesanne 5.4c
  * */
 public class test {
-    public static void tervitus(int n) {
-        System.out.println("\"Tere!\"");
-        System.out.println("Täna " + n + ". kord tervitada mõtiskleb võõrustaja.");
-        System.out.println("\"Külaline: Tere, suur tänu kutse eest!\"");
-    }
-
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Sisestage külaliste arv: ");
-        int mitu = input.nextInt();
-
-        int number = 1;
-
-        while (number <= mitu) {
-            tervitus(number);
-            number++;
+        ArrayList<String> opilased = new ArrayList<>();
+        File fail = new File("C:\\Users\\mihkel\\IdeaProjects\\untitled\\src\\nimekiri.txt");
+        Scanner input = null;
+        try {
+            input = new Scanner(fail);
+        } catch (Exception e) {
+            System.out.println("Faili pole - " + e.getMessage());
         }
+
+        while (input.hasNextLine()) {
+            String rida = input.nextLine();
+            opilased.add(rida);
+        }
+        input.close();
+
+        LocalDateTime today = LocalDateTime.now();
+        DateTimeFormatter todayFormat = DateTimeFormatter.ofPattern("dd");
+        String todayFormatted = today.format(todayFormat);
+        System.out.println(todayFormatted);
+        int index = Integer.parseInt(todayFormatted);
+        System.out.println(opilased.get(index - 1));
+
+
     }
 }
