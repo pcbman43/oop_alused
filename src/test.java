@@ -1,19 +1,16 @@
 import java.io.File;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
  * meetod + return operaator
  * autor - Mihkel Kougia
- * ülesanne 5.4c
+ * ülesanne 6.4b
  * */
 public class test {
     public static void main(String[] args) {
-        ArrayList<String> opilased = new ArrayList<>();
-        File fail = new File("C:\\Users\\mihkel\\IdeaProjects\\untitled\\src\\nimekiri.txt");
+        ArrayList<Integer> mundid = new ArrayList<>();
+        File fail = new File("C:\\Users\\mihkel\\IdeaProjects\\untitled\\src\\mündid.txt");
         Scanner input = null;
         try {
             input = new Scanner(fail);
@@ -22,18 +19,20 @@ public class test {
         }
 
         while (input.hasNextLine()) {
-            String rida = input.nextLine();
-            opilased.add(rida);
+            Integer rida = input.nextInt();
+            if (rida == 1 || rida == 2 || rida == 5) {
+                mundid.add(rida);
+            }
+
         }
         input.close();
+        int sum = 0;
+        for (int arv : mundid) {
+            sum += arv;
+        }
 
-        LocalDateTime today = LocalDateTime.now();
-        DateTimeFormatter todayFormat = DateTimeFormatter.ofPattern("dd");
-        String todayFormatted = today.format(todayFormat);
-        System.out.println(todayFormatted);
-        int index = Integer.parseInt(todayFormatted);
-        System.out.println(opilased.get(index - 1));
-
+        System.out.println(mundid);
+        System.out.println(sum);
 
     }
 }
